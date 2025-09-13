@@ -1,9 +1,14 @@
 name: "Custom CodeQL config"
+
 queries:
-  - uses: security-extended
-  - ./queries
+  - name: Use security-extended queries
+    uses: security-extended
+  - name: Use custom queries  
+    uses: ./queries/
+
 paths:
   - "**/*.py"
+
 paths-ignore:
   - "**/test_*.py"
   - "**/tests/**"
