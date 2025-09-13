@@ -1,19 +1,21 @@
 /**
- * @name Command injection
- * @description Executing user-controlled commands can lead to command injection vulnerabilities
- * @kind path-problem
+ * @name Injection de commandes simple
+ * @description Détecte l'utilisation d'os.system avec input() directement
+ * @kind problem
  * @problem.severity error
- * @security-severity 9.8
- * @precision high
- * @id py/command-injection-custom
+ * @id py/simple-command-injection
  * @tags security
- *       external/cwe/cwe-078
  */
 
 import python
-import semmle.python.security.dataflow.CommandInjectionQuery
-import DataFlow::PathGraph
 
-from CommandInjectionFlow::PathNode source, CommandInjectionFlow::PathNode sink
-where CommandInjectionFlow::flowPath(source, sink)
-select sink.getNode(), source, sink, "This command depends on a $@.", source.getNode(), "user-provided value"
+from Call call
+where
+  // Cherche les appels à os.system()
+  call.getFunc().(Attribute).getAttr() = "system" and
+  call.getFunc().(Attribute).getValue().(Name).getId() = "os" and
+  
+  // Vérifie si l'argument contient un appel à input()
+  call.getArg(0).(Call).getFunc().(Name).getId() = "input"
+
+select call, "Utilisation dangereuse d'os.system() avec input() utilisateur"
