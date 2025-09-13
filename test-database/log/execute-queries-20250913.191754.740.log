@@ -1,0 +1,1007 @@
+[2025-09-13 19:17:54] This is codeql execute queries -J-Xmx1800M --off-heap-ram=1530 --verbosity=progress --logdir=C:\Users\elfah\Desktop\projects\codeql-test\test-database\log --evaluator-log-level=5 --warnings=show --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --dynamic-join-order-mode=none --no-rerun --output=C:\Users\elfah\Desktop\projects\codeql-test\test-database\results -- C:\Users\elfah\Desktop\projects\codeql-test\test-database\db-python queries/hardcoded-password.ql
+[2025-09-13 19:17:54] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --format=json -- queries/hardcoded-password.ql
+[2025-09-13 19:17:55] [PROGRESS] resolve queries> Recording pack reference test-security-queries at C:\Users\elfah\Desktop\projects\codeql-test\queries.
+[2025-09-13 19:17:55] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries\\hardcoded-password.ql"
+                      ]
+[2025-09-13 19:17:55] Refusing fancy output: Cannot detect terminal size on this platform
+[2025-09-13 19:17:55] Creating executor with 1 threads.
+[2025-09-13 19:17:55] Calling plumbing command: codeql resolve extensions --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --include-extension-row-locations queries/hardcoded-password.ql
+[2025-09-13 19:17:55] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --allow-library-packs --format startingpacks -- queries/hardcoded-password.ql
+[2025-09-13 19:17:55] [PROGRESS] resolve queries> Recording pack reference test-security-queries at C:\Users\elfah\Desktop\projects\codeql-test\queries.
+[2025-09-13 19:17:55] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries"
+                      ]
+[2025-09-13 19:17:55] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --include-extension-row-locations -- C:\Users\elfah\Desktop\projects\codeql-test\queries
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] test-security-queries: 1.0.0 {test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] test-security-queries: * [*], codeql/python-all: not * [*] {dependency: test-security-queries@* [*] requires codeql/python-all@*}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 1] test-security-queries: 1.0.0
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/python-all: * [*] {test-security-queries: * [*], codeql/python-all: not * [*] {dependency: test-security-queries@* [*] requires codeql/python-all@*}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/concepts: not * [*] {dependency: codeql/python-all@* [*] requires codeql/concepts@0.0.4}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/python-all@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/mad: not * [*] {dependency: codeql/python-all@* [*] requires codeql/mad@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/regex: not * [*] {dependency: codeql/python-all@* [*] requires codeql/regex@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/threat-models: not * [*] {dependency: codeql/python-all@* [*] requires codeql/threat-models@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/python-all@* [*] requires codeql/tutorial@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/util: not * [*] {dependency: codeql/python-all@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/xml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/xml@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/yaml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/yaml@1.0.30}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 2] codeql/python-all: 4.0.14
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/yaml: * [*] {codeql/python-all: * [*], codeql/yaml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/yaml@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/xml: * [*] {codeql/python-all: * [*], codeql/xml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/xml@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/util: * [*] {codeql/python-all: * [*], codeql/util: not * [*] {dependency: codeql/python-all@* [*] requires codeql/util@2.0.17}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/tutorial: * [*] {codeql/python-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/python-all@* [*] requires codeql/tutorial@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/threat-models: * [*] {codeql/python-all: * [*], codeql/threat-models: not * [*] {dependency: codeql/python-all@* [*] requires codeql/threat-models@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/regex: * [*] {codeql/python-all: * [*], codeql/regex: not * [*] {dependency: codeql/python-all@* [*] requires codeql/regex@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/mad: * [*] {codeql/python-all: * [*], codeql/mad: not * [*] {dependency: codeql/python-all@* [*] requires codeql/mad@1.0.30}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/dataflow: * [*] {codeql/python-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/python-all@* [*] requires codeql/dataflow@2.0.14}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/concepts: * [*] {codeql/python-all: * [*], codeql/concepts: not * [*] {dependency: codeql/python-all@* [*] requires codeql/concepts@0.0.4}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/concepts: * [*], codeql/dataflow: not * [*] {dependency: codeql/concepts@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/concepts: * [*], codeql/util: not * [*] {dependency: codeql/concepts@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 3] codeql/concepts: 0.0.4
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/controlflow: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/controlflow@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@2.0.6}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 4] codeql/dataflow: 2.0.14
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.14}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/ssa: * [*] {codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@2.0.6}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/controlflow: * [*] {codeql/dataflow: * [*], codeql/controlflow: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/controlflow@2.0.14}}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/controlflow: * [*], codeql/util: not * [*] {dependency: codeql/controlflow@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 5] codeql/controlflow: 2.0.14
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/mad: * [*], codeql/dataflow: not * [*] {dependency: codeql/mad@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/mad: * [*], codeql/util: not * [*] {dependency: codeql/mad@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 6] codeql/mad: 1.0.30
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/regex: * [*], codeql/util: not * [*] {dependency: codeql/regex@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 7] codeql/regex: 1.0.30
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/controlflow: not * [*] {dependency: codeql/ssa@* [*] requires codeql/controlflow@2.0.14}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 8] codeql/ssa: 2.0.6
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 9] codeql/threat-models: 1.0.30
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 10] codeql/tutorial: 1.0.30
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 11] codeql/typetracking: 2.0.14
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 12] codeql/util: 2.0.17
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/xml: * [*], codeql/util: not * [*] {dependency: codeql/xml@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 13] codeql/xml: 1.0.30
+[2025-09-13 19:17:55] [SPAMMY] resolve extensions-by-pack> [DECISION 14] codeql/yaml: 1.0.30
+[2025-09-13 19:17:55] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\ext\default-threat-models-fixup.model.yml.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/threat-models:threatModelConfiguration: 1 tuples.
+[2025-09-13 19:17:55] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\semmle\python\frameworks\Asyncpg.model.yml.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:sinkModel: 5 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeModel: 6 tuples.
+[2025-09-13 19:17:55] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\semmle\python\frameworks\Stdlib.model.yml.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:sourceModel: 12 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:sinkModel: 1 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:summaryModel: 66 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:neutralModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeVariableModel: 0 tuples.
+[2025-09-13 19:17:55] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\semmle\python\frameworks\data\internal\empty.model.yml.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:sourceModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:sinkModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:summaryModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:neutralModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeModel: 0 tuples.
+[2025-09-13 19:17:55] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeVariableModel: 0 tuples.
+[2025-09-13 19:17:56] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\semmle\python\frameworks\data\internal\subclass-capture\ALL.model.yml.
+[2025-09-13 19:17:56] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/python-all:typeModel: 58275 tuples.
+[2025-09-13 19:17:56] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\threat-models\1.0.30\ext\supported-threat-models.model.yml.
+[2025-09-13 19:17:56] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/threat-models:threatModelConfiguration: 1 tuples.
+[2025-09-13 19:17:56] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\threat-models\1.0.30\ext\threat-model-grouping.model.yml.
+[2025-09-13 19:17:56] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/threat-models:threatModelGrouping: 15 tuples.
+[2025-09-13 19:17:56] [PROGRESS] resolve extensions-by-pack> Loading data extensions in C:\Users\elfah\.codeql\packages\codeql\util\2.0.17\ext\default-alert-filter.yml.
+[2025-09-13 19:17:56] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/util:restrictAlertsTo: 0 tuples.
+[2025-09-13 19:17:56] [DETAILS] resolve extensions-by-pack>   Found extension targeting codeql/util:restrictAlertsToExactLocation: 0 tuples.
+[2025-09-13 19:17:56] Plumbing command codeql resolve extensions-by-pack completed:
+                      {
+                        "models" : [ ],
+                        "data" : {
+                          "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries" : [
+                            {
+                              "predicate" : "threatModelConfiguration",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\ext\\default-threat-models-fixup.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 0,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=8",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Asyncpg.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 1,
+                              "rowCount" : 5,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=7+1+2+1+2",
+                                "columnNumbers" : "A=9*5"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Asyncpg.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 6,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=20+4+1*2+2+1",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 12,
+                              "rowCount" : 12,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*4+2+1+2+1*2+4+2",
+                                "columnNumbers" : "A=9*12"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 24,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=29",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 25,
+                              "rowCount" : 66,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=37+1+2+4+2*2+4+2*3+1+2+1+2+1+2+4+2+4+2*2+3+2*2+3+1+2*4+4+1+4+1+4+1*5+2*4+4+1+2*11+3+2+3+4+1+2*2+1+2",
+                                "columnNumbers" : "A=9*66"
+                              }
+                            },
+                            {
+                              "predicate" : "neutralModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 3,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 4,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeVariableModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 5,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "neutralModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 3,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 4,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeVariableModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 5,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\subclass-capture\\ALL.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 91,
+                              "rowCount" : 58275,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=7+3*58274",
+                                "columnNumbers" : "A=5*58275"
+                              }
+                            },
+                            {
+                              "predicate" : "threatModelConfiguration",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\threat-models\\1.0.30\\ext\\supported-threat-models.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 58366,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "threatModelGrouping",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\threat-models\\1.0.30\\ext\\threat-model-grouping.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 58367,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=8+3+1+3+1*5+3+1+5+1*3",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsTo",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\util\\2.0.17\\ext\\default-alert-filter.yml",
+                              "index" : 0,
+                              "firstRowId" : 58382,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsToExactLocation",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\util\\2.0.17\\ext\\default-alert-filter.yml",
+                              "index" : 1,
+                              "firstRowId" : 58382,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            }
+                          ]
+                        },
+                        "threatModels" : {
+                          "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries" : {
+                            "extensions" : [
+                              {
+                                "data" : [ ],
+                                "addsTo" : {
+                                  "extensible" : "threatModelConfiguration",
+                                  "checkPresence" : true,
+                                  "packName" : "codeql/threat-models"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "extensionPacks" : [ ]
+                      }
+[2025-09-13 19:17:56] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : {
+                          "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries" : [
+                            {
+                              "predicate" : "threatModelConfiguration",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\ext\\default-threat-models-fixup.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 0,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=8",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Asyncpg.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 1,
+                              "rowCount" : 5,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=7+1+2+1+2",
+                                "columnNumbers" : "A=9*5"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Asyncpg.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 6,
+                              "rowCount" : 6,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=20+4+1*2+2+1",
+                                "columnNumbers" : "A=9*6"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 12,
+                              "rowCount" : 12,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=6+1*4+2+1+2+1*2+4+2",
+                                "columnNumbers" : "A=9*12"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 24,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=29",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 25,
+                              "rowCount" : 66,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A=37+1+2+4+2*2+4+2*3+1+2+1+2+1+2+4+2+4+2*2+3+2*2+3+1+2*4+4+1+4+1+4+1*5+2*4+4+1+2*11+3+2+3+4+1+2*2+1+2",
+                                "columnNumbers" : "A=9*66"
+                              }
+                            },
+                            {
+                              "predicate" : "neutralModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 3,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 4,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeVariableModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\Stdlib.model.yml",
+                              "index" : 5,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sourceModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "sinkModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 1,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "summaryModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 2,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : true,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "neutralModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 3,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 4,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeVariableModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\empty.model.yml",
+                              "index" : 5,
+                              "firstRowId" : 91,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "typeModel",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmle\\python\\frameworks\\data\\internal\\subclass-capture\\ALL.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 91,
+                              "rowCount" : 58275,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=7+3*58274",
+                                "columnNumbers" : "A=5*58275"
+                              }
+                            },
+                            {
+                              "predicate" : "threatModelConfiguration",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\threat-models\\1.0.30\\ext\\supported-threat-models.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 58366,
+                              "rowCount" : 1,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=6",
+                                "columnNumbers" : "A=9"
+                              }
+                            },
+                            {
+                              "predicate" : "threatModelGrouping",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\threat-models\\1.0.30\\ext\\threat-model-grouping.model.yml",
+                              "index" : 0,
+                              "firstRowId" : 58367,
+                              "rowCount" : 15,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A=8+3+1+3+1*5+3+1+5+1*3",
+                                "columnNumbers" : "A=9*15"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsTo",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\util\\2.0.17\\ext\\default-alert-filter.yml",
+                              "index" : 0,
+                              "firstRowId" : 58382,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            },
+                            {
+                              "predicate" : "restrictAlertsToExactLocation",
+                              "file" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\util\\2.0.17\\ext\\default-alert-filter.yml",
+                              "index" : 1,
+                              "firstRowId" : 58382,
+                              "rowCount" : 0,
+                              "predicateHasOrigin" : false,
+                              "locations" : {
+                                "lineNumbers" : "A",
+                                "columnNumbers" : "A"
+                              }
+                            }
+                          ]
+                        },
+                        "threatModels" : {
+                          "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries" : {
+                            "extensions" : [
+                              {
+                                "data" : [ ],
+                                "addsTo" : {
+                                  "extensible" : "threatModelConfiguration",
+                                  "checkPresence" : true,
+                                  "packName" : "codeql/threat-models"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "extensionPacks" : [ ]
+                      }
+[2025-09-13 19:17:56] Calling plumbing command: codeql resolve library-path --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --query=C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql --format=json
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> Resolving query at normalized path C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> Found enclosing pack 'test-security-queries' at C:\Users\elfah\Desktop\projects\codeql-test\queries.
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> Adding compilation cache at C:\Users\elfah\.codeql\compile-cache.
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> Resolving library dependencies from C:\Users\elfah\Desktop\projects\codeql-test\queries\qlpack.yml.
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] test-security-queries: 1.0.0 {test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] test-security-queries: * [*], codeql/python-all: not * [*] {dependency: test-security-queries@* [*] requires codeql/python-all@*}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 1] test-security-queries: 1.0.0
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/python-all: * [*] {test-security-queries: * [*], codeql/python-all: not * [*] {dependency: test-security-queries@* [*] requires codeql/python-all@*}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/concepts: not * [*] {dependency: codeql/python-all@* [*] requires codeql/concepts@0.0.4}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/python-all@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/mad: not * [*] {dependency: codeql/python-all@* [*] requires codeql/mad@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/regex: not * [*] {dependency: codeql/python-all@* [*] requires codeql/regex@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/threat-models: not * [*] {dependency: codeql/python-all@* [*] requires codeql/threat-models@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/python-all@* [*] requires codeql/tutorial@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/util: not * [*] {dependency: codeql/python-all@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/xml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/xml@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/python-all: * [*], codeql/yaml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/yaml@1.0.30}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 2] codeql/python-all: 4.0.14
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/yaml: * [*] {codeql/python-all: * [*], codeql/yaml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/yaml@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/xml: * [*] {codeql/python-all: * [*], codeql/xml: not * [*] {dependency: codeql/python-all@* [*] requires codeql/xml@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/util: * [*] {codeql/python-all: * [*], codeql/util: not * [*] {dependency: codeql/python-all@* [*] requires codeql/util@2.0.17}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/tutorial: * [*] {codeql/python-all: * [*], codeql/tutorial: not * [*] {dependency: codeql/python-all@* [*] requires codeql/tutorial@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/threat-models: * [*] {codeql/python-all: * [*], codeql/threat-models: not * [*] {dependency: codeql/python-all@* [*] requires codeql/threat-models@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/regex: * [*] {codeql/python-all: * [*], codeql/regex: not * [*] {dependency: codeql/python-all@* [*] requires codeql/regex@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/mad: * [*] {codeql/python-all: * [*], codeql/mad: not * [*] {dependency: codeql/python-all@* [*] requires codeql/mad@1.0.30}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/dataflow: * [*] {codeql/python-all: * [*], codeql/dataflow: not * [*] {dependency: codeql/python-all@* [*] requires codeql/dataflow@2.0.14}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/concepts: * [*] {codeql/python-all: * [*], codeql/concepts: not * [*] {dependency: codeql/python-all@* [*] requires codeql/concepts@0.0.4}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/concepts: * [*], codeql/dataflow: not * [*] {dependency: codeql/concepts@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/concepts: * [*], codeql/util: not * [*] {dependency: codeql/concepts@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 3] codeql/concepts: 0.0.4
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/controlflow: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/controlflow@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@2.0.6}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/dataflow: * [*], codeql/util: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 4] codeql/dataflow: 2.0.14
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/typetracking: * [*] {codeql/dataflow: * [*], codeql/typetracking: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/typetracking@2.0.14}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/ssa: * [*] {codeql/dataflow: * [*], codeql/ssa: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/ssa@2.0.6}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DERIVATION] codeql/controlflow: * [*] {codeql/dataflow: * [*], codeql/controlflow: not * [*] {dependency: codeql/dataflow@* [*] requires codeql/controlflow@2.0.14}}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/controlflow: * [*], codeql/util: not * [*] {dependency: codeql/controlflow@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 5] codeql/controlflow: 2.0.14
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/mad: * [*], codeql/dataflow: not * [*] {dependency: codeql/mad@* [*] requires codeql/dataflow@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/mad: * [*], codeql/util: not * [*] {dependency: codeql/mad@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 6] codeql/mad: 1.0.30
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/regex: * [*], codeql/util: not * [*] {dependency: codeql/regex@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 7] codeql/regex: 1.0.30
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/controlflow: not * [*] {dependency: codeql/ssa@* [*] requires codeql/controlflow@2.0.14}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/ssa: * [*], codeql/util: not * [*] {dependency: codeql/ssa@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 8] codeql/ssa: 2.0.6
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 9] codeql/threat-models: 1.0.30
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 10] codeql/tutorial: 1.0.30
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/typetracking: * [*], codeql/util: not * [*] {dependency: codeql/typetracking@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 11] codeql/typetracking: 2.0.14
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 12] codeql/util: 2.0.17
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [INCOMPATIBILITY] codeql/xml: * [*], codeql/util: not * [*] {dependency: codeql/xml@* [*] requires codeql/util@2.0.17}
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 13] codeql/xml: 1.0.30
+[2025-09-13 19:17:56] [SPAMMY] resolve library-path> [DECISION 14] codeql/yaml: 1.0.30
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> QL pack dependencies for C:\Users\elfah\Desktop\projects\codeql-test\queries resolved OK.
+[2025-09-13 19:17:56] [DETAILS] resolve library-path> Found dbscheme through QL packs: C:\Users\elfah\.codeql\packages\codeql\python-all\4.0.14\semmlecode.python.dbscheme.
+[2025-09-13 19:17:56] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\concepts\\0.0.4",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\dataflow\\2.0.14",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\controlflow\\2.0.14",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\mad\\1.0.30",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\regex\\1.0.30",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\ssa\\2.0.6",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\threat-models\\1.0.30",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\tutorial\\1.0.30",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\typetracking\\2.0.14",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\util\\2.0.17",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\xml\\1.0.30",
+                          "C:\\Users\\elfah\\.codeql\\packages\\codeql\\yaml\\1.0.30"
+                        ],
+                        "dbscheme" : "C:\\Users\\elfah\\.codeql\\packages\\codeql\\python-all\\4.0.14\\semmlecode.python.dbscheme",
+                        "compilationCache" : [
+                          "C:\\Users\\elfah\\.codeql\\compile-cache"
+                        ],
+                        "relativeName" : "test-security-queries\\hardcoded-password.ql",
+                        "qlPackName" : "test-security-queries"
+                      }
+[2025-09-13 19:17:56] [PROGRESS] execute queries> Compiling query plan for C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:17:56] [DETAILS] execute queries> Resolving imports for C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:17:57] Resolved file set for C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql hashes to 3d6d46cd3a8c43439bc4751be712d2fa.
+[2025-09-13 19:17:57] [DETAILS] execute queries> Checking QL for C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:17:57] Stale frontend caches are invalidated based on import graph reachability.
+[2025-09-13 19:17:57] ExternalModuleBindingPass ...
+[2025-09-13 19:17:58] ExternalModuleBindingPass time: 00:00.637
+[2025-09-13 19:17:58] CollectInstantiationsPass ...
+[2025-09-13 19:17:58] CollectInstantiationsPass time: 00:00.299
+[2025-09-13 19:17:58] Ql checks ...
+[2025-09-13 19:18:02] Ql checks time: 00:03.222
+[2025-09-13 19:18:08] Compilation pipeline
+[2025-09-13 19:18:08] Type Inference ...
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: Best number of iterations,Maximum number of runs,Number of BDD variables,Size of BDD for typefacts
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,96,97
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,327,385
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,0,0
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,24,24
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,48,72
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,5,5
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,7,7
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,562,15920
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,12,13
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,8,11
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,4,4
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,7,7
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,6,6
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,5,5
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,9,9
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,10,12
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,10,10
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,13,18
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,6,7
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,9,9
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,8,11
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,53,63
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,18,18
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,4,5
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,8,8
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,4,4
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,4
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,4
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,9,9
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,6,8
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,41,52
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,2,2
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,1,1
+[2025-09-13 19:18:08] CSV_TYPE_HIERARCHY: 0,0,3,3
+[2025-09-13 19:18:10] Type Inference time: 00:01.832
+[2025-09-13 19:18:11] [WARN] execute queries> WARNING: type 'StrConst' has been deprecated and may be removed in future (C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql:14,31-39)
+[2025-09-13 19:18:11] [DETAILS] execute queries> Optimizing C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:18:11] Processing compilation pipeline
+[2025-09-13 19:18:11] Started compiling a query
+[2025-09-13 19:18:11] Initialising compiler...
+[2025-09-13 19:18:11] 	 ... compiler initialised
+[2025-09-13 19:18:11] About to start query optimisation
+[2025-09-13 19:18:11] Compilation cache hit - skipping compilation.
+[2025-09-13 19:18:12] Compilation cache hit - skipping compilation.
+[2025-09-13 19:18:12] Compilation cache miss for 58d620bff305e8b2ddd8d092c3f110be.
+[2025-09-13 19:18:15] Stored compiled program for 58d620bff305e8b2ddd8d092c3f110be.
+[2025-09-13 19:18:15] CSV_COMPILATION: NONE,MISC,RA_TRANSLATION,OPTIMISATIONS
+[2025-09-13 19:18:15] CSV_COMPILATION: 317,536,875,1770
+[2025-09-13 19:18:15] [SPAMMY] execute queries> No database upgrade/downgrade needed for C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql
+[2025-09-13 19:18:15] [PROGRESS] execute queries> [1/1 comp 18.4s] Compiled C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql.
+[2025-09-13 19:18:15] [PROGRESS] execute queries> Starting evaluation of test-security-queries\hardcoded-password.ql.
+[2025-09-13 19:18:15] Starting evaluation of C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql
+[2025-09-13 19:18:15] (0s) Start query execution
+[2025-09-13 19:18:15] (0s) Beginning execution of C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_AstExtended::AstNode.getLocation/0#dispred#6b4dcb62/2@389a43u0 with 67 rows and digest 523d53eefete8g53q027mg3c3s6.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Files::Impl::Container.splitAbsolutePath/2#dispred#324a3985/3@c992f399 with 25 rows and digest 150b612n855asf5kjkju3rjg637.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Essa::TEssaDefinition#4c062f56/1@1f640cq1 with 16 rows and digest da071fhfgj7r26p2q29ige2q79b.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Essa::TEssaEdgeDefinition#be4738bc/4@2da913f5 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaCompute::EssaDefinitions::piNode/3#b1917f93/3@3204beti with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaCompute::AdjacentUses::adjacentUseUse/2#c094915e/2@7a8d25mj with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaCompute::AdjacentUses::adjacentUseUseSameVar/2#2eafd7db/2@5511060c with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::adjacentVarRefs/5#de1f7cd5/5@89f4b0i1 with 17 rows and digest f92903gbdpa5g72hta3v7978moa.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::defSourceUseRank/4#ebad7bcb/4@99c70bvp with 32 rows and digest e34b18nv60kq3qqfdq7c5k9euud.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::variableDefine/4#79261f91/4@1e9ed9n1 with 21 rows and digest 8c6636dh1o7b3lot7opi5kmker9.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::BasicBlock.strictlyDominates/1#dispred#65ae2ca3/2@40c1c68m with 2 rows and digest fe87255er3ihni7na9bcju0mv34.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_CachedStages::Stages::AST::ref/0#e52d92b5/0@c876115v with 1 rows and digest ac90f0ei322hhreshlvdl215c38.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_CachedStages::Stages::AST::backref/0#dddb3000/0@a80d27a0 with 1 rows and digest ac90f0ei322hhreshlvdl215c38.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaDefinitions::SsaSource::method_call_refinement/3#3634d2a9/3@ec7d91se with 2 rows and digest 53475c5st7l3jl2d8fhtjsk6pub.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaDefinitions::SsaSource::argument_refinement/3#615fb3a9/3@2d844778 with 2 rows and digest 36c64c4jljfavvq20pn872gboqd.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaDefinitions::SsaSource::assignment_definition/3#a5ba4d99/3@5c11868o with 7 rows and digest 894f67cm11lkjoj2qetujcuioc3.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::DefinitionNode#e8809c3b/1@a95b912i with 7 rows and digest 6218e3a868r3gegehtp45b39ok3.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_AstExtended::AstNode.getAFlowNode/0#dispred#fcebb9ee/2@89ae53vo with 56 rows and digest 4e1e4ekl38d56qkfld9c5q5fnk9.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaDefinitions::SsaSource::parameter_definition/2#40b2fede/2@9409b5ba with 2 rows and digest d1a6c5i0qhjcglqsgjkthq4o997.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::attribute_assignment_refinement/3#5f777592/3@f4c9688s with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::ControlFlowNode.getScope/0#dispred#b061daac/2@afe6a2k8 with 56 rows and digest 052646k2sebcq149be86ir38dc0.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_AstExtended::AstNode.getAChildNode/0#dispred#a130356d/2@4a4f6brg with 66 rows and digest 6dbe5f6lm4f63b2o6fe43spa24c.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::BasicBlock.getASuccessor/0#dispred#7249dd96/2@debdc7ao with 3 rows and digest 574ae27q9rg8simcj1c42lnhdtf.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::attribute_deletion_refinement/3#7de1bd7a/3@bc7edf3e with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::deletion_definition/2#e74a17e3/2@a934fde8 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::exception_capture/2#fd0779df/2@793700dj with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::exception_group_capture/2#d53f492d/2@790fdeja with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::import_star_refinement/3#1675f8e2/3@39fa47h0 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::init_module_submodule_defn/2#64b1af7d/2@2761bd9c with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Module::moduleNameFromFile/1#a01d5f51/2@010e4f4r with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::multi_assignment_definition/4#1d17889e/4@89e653d3 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Flow::SequenceNode.getElement/1#dispred#4cc4068f/3@cc5e78ka with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::pattern_alias_definition/2#e55586af/2@f91af3ha with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::pattern_capture_definition/2#77b3ae42/2@6e282c28 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::test_refinement/3#2cbdf557/3@c646bdum with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaDefinitions::SsaSource::with_definition/2#e1888ceb/2@e0bd2902 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaDefinitions::reachesEndOfBlock/4#214bd902/4@51af43la with 16 rows and digest 7b484aijv2sfhrpqgfk2qgj8a93.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::Liveness::liveAtExit/2#b6aa63f4/2@00f3ba04 with 18 rows and digest 354e9da34th0ecekhqb28l9be30.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::Liveness::liveAtEntry/2#bab3ea7c/2@6601ffvo with 19 rows and digest 6acf88nl90eqd5vurtenjm1fjd8.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::defUseRank/4#782a2f48/4@a2d696uu with 77 rows and digest 725e74fe8ds4kco1su2vqluvble.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::variableDef/4#38b3ef7e/4@8a1c0f76 with 25 rows and digest 2d7821ss3cl9a6j879uj1bhrh59.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::variableRefine/4#b20a3c26/4@209e7767 with 4 rows and digest e2a29fdrkfgsdl7p4vqrh6l353d.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::variableUse/4#da62dc30/4@ce02f549 with 52 rows and digest 60c55boqj9cc8vm359r92bkevdf.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::defRank/4#f608ea69/4@7f1611ue with 25 rows and digest e39b06ej5md4g0obgo7v4l34nb8.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::lastRank/2#6cfcb19d/3@31be08bm with 31 rows and digest 57dd3en0qo8nk42jjqlem56115d.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_SsaCompute::EssaDefinitions::phiNode/2#4864b30d/2@6d3370k7 with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::BasicBlock.getImmediateDominator/0#dispred#0f15e8ec/2@408ca88v with 2 rows and digest d952ecpgp2icarrhsapp5bptn4c.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::ssaDef/2#1ca5a11b/2@5c252abd with 14 rows and digest 110d5bvcusioitocsrs2jam06v4.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::EssaDefinitions::variableUpdate/5#c42159b9/5@2ba91fut with 16 rows and digest 3a4d2cnr5r9e98mt2h8jt7vfko5.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::EssaDefinitions::variableDefinition/5#32b5d84f/5@5f1279gb with 14 rows and digest 896092mf82bnq1sfk31q5s8qso8.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::EssaDefinitions::variableRefinement/5#4e891107/5@95e977ab with 2 rows and digest 1109daobn2n4a60tqgb0k50kaaf.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::ssaDefReachesRank/4#f19c6fee/4@532392t5 with 29 rows and digest 6704cer0j2b1vk8qdlumh8l2pmb.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Essa::TPhiFunction#dfb6fe3b/3@7b01100f with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Essa::PhiFunction.getInput/1#dispred#f797e1b9/3@1e15a0vd with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Essa::TEssaNodeDefinition#96e9ebfe/4@a811d0mp with 14 rows and digest da7db6e7euocj4rq4drkb9632ad.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Essa::TEssaNodeRefinement#8de2de42/4@3787696p with 2 rows and digest 8fb595hihmual1j4rfbl6n0e5n5.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Exprs::Expr.toString/0#dispred#7435dfcd/2@a8c03872 with 45 rows and digest 248857qs8ioso4hde0v6h6hj54c.
+[2025-09-13 19:18:15] (0s)  >>> First-level cache hit cached_Import::ImportStar.getModuleExpr/0#dispred#8ab9ce73/2@9212cahk with empty relation.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_AstExtended::AstNode.getParentNode/0#dispred#c159e3ee/2@699751d5 with 66 rows and digest 4a40c7of85ba7rnbvm323a06712.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_#Flow::BasicBlock.getASuccessor/0#dispred#7249dd96Plus/2@4ae642b8 with 3 rows and digest 574ae27q9rg8simcj1c42lnhdtf.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_Flow::ControlFlowNode.toString/0#dispred#e1af144b/2@54b666h0 with 56 rows and digest 876b61tkdmsbnsg3nvacso0rb2f.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::variableSourceUse/4#4525ef19/4@271bba4s with 11 rows and digest a090463o9vfhda2r0s2srmr8qsd.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::definesAt/4#68130204/4@9b73a8u2 with 14 rows and digest 964c5758mcdvjebhk601c8tcuh2.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::firstUse/2#ca053ce0/2@2780bbgq with 10 rows and digest 0c4514f702u0op44ppdadscdtn6.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::AdjacentUses::useOfDef/2#16a7ee50/2@97c10ecb with 10 rows and digest 0c4514f702u0op44ppdadscdtn6.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaDefinitions::reachesExit/3#a534505a/3@69ae42if with 12 rows and digest 5f8216k5lh0tl2ihmeoi44rol15.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaDefinitions::reachesUse/4#216dc4f6/4@158c02ei with 50 rows and digest 3ee05cetl5h5556jmtfnv8cm6gd.
+[2025-09-13 19:18:15] (0s)  >>> Full cache hit cached_SsaCompute::SsaComputeImpl::ssaDefReachesUseWithinBlock/4#87a91e15/4@778d2eln with 11 rows and digest 27ac961r8587scblgt63kvpv3n0.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_stmts/4@93720efi with 17 rows and digest 4abad7vvssr6dqph4ehp74msu15.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_exprs/4@62fb455g with 45 rows and digest 08f84fqmabv9u5gnr80p70urqf6.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_exprs_10#join_rhs/2@073ac12u
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_exprs_10#join_rhs/2@073ac12u with 45 rows and digest 077d45e0hkm8gumep45vfpav6k3.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_strs/3@35cd6b34 with 29 rows and digest a062731t5btmvijbstormc1jg85.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_strs_120#join_rhs/3@bec877pd
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_strs_120#join_rhs/3@bec877pd with 29 rows and digest e38677a5b7rqjp21d77660u603c.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Exprs::StringLiteral.getText/0#dispred#8c21c5a0/2@7c4c2dkg
+[2025-09-13 19:18:15] (0s)  >>> Created relation Exprs::StringLiteral.getText/0#dispred#8c21c5a0/2@7c4c2dkg with 9 rows and digest 70ec9b5vljn715vib0j1o08so55.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_expr_lists/3@1b5e391t with 16 rows and digest 5e9499kv3e2mabivcasovkndks9.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_expr_lists_120#join_rhs/3@3304a2u1
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_expr_lists_120#join_rhs/3@3304a2u1 with 16 rows and digest 957c3ffh5582ntd27erl6a6no94.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_exprs_203#join_rhs/3@0e8aa5mo
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_exprs_203#join_rhs/3@0e8aa5mo with 45 rows and digest 786ae38tvcq2kvtdkf6812p6lrc.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Call_.getPositionalArg/1#dispred#16c46df7#ffb/3@a4dc08h1
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Call_.getPositionalArg/1#dispred#16c46df7#ffb/3@a4dc08h1 with 5 rows and digest f19510u9cialq6im3fif3hbmdf0.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _py_exprs_10#join_rhs#antijoin_rhs#10/1@8754f207
+[2025-09-13 19:18:15] (0s)  >>> Created relation _py_exprs_10#join_rhs#antijoin_rhs#10/1@8754f207 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Inferred that Flow::StarredNode.getValue/0#dispred#77106d16/2@ecb8631a is empty, due to _py_exprs_10#join_rhs#antijoin_rhs#10/1@8754f207.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _AstGenerated::Call_.getPositionalArg/1#dispred#16c46df7#ffb_py_exprs#antijoin_rhs/3@45e6d618
+[2025-09-13 19:18:15] (0s)  >>> Created relation _AstGenerated::Call_.getPositionalArg/1#dispred#16c46df7#ffb_py_exprs#antijoin_rhs/3@45e6d618 with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Exprs::Call.getArg/1#dispred#50c53eea#ffb/3@1505fcts
+[2025-09-13 19:18:15] (0s)  >>> Created relation Exprs::Call.getArg/1#dispred#50c53eea#ffb/3@1505fcts with 5 rows and digest f19510u9cialq6im3fif3hbmdf0.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Exprs::Call.getArg/1#dispred#50c53eea#ffb_120#join_rhs/3@3628ddph
+[2025-09-13 19:18:15] (0s)  >>> Created relation Exprs::Call.getArg/1#dispred#50c53eea#ffb_120#join_rhs/3@3628ddph with 5 rows and digest 60f8aajukce75jc28e1h10bf1g3.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Function::FunctionExpr.getADecoratorCall/0#062a6e2a/2@i1#0345bbbi (iteration 1)
+[2025-09-13 19:18:15] (0s) Empty delta for Function::FunctionExpr.getADecoratorCall/0#062a6e2a_delta (order for disjuncts: delta=<standard>).
+[2025-09-13 19:18:15] (0s) Accumulating deltas
+[2025-09-13 19:18:15] (0s)  >>> Created relation Function::FunctionExpr.getADecoratorCall/0#062a6e2a/2@0345bbbi with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Inferred that project#Function::FunctionExpr.getADecoratorCall/0#062a6e2a/1@d0a3dcds is empty, due to Function::FunctionExpr.getADecoratorCall/0#062a6e2a/2@0345bbbi.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Class::ClassExpr.getADecoratorCall/0#54df5696/2@i1#a74da0oo (iteration 1)
+[2025-09-13 19:18:15] (0s) Empty delta for Class::ClassExpr.getADecoratorCall/0#54df5696_delta (order for disjuncts: delta=<standard>).
+[2025-09-13 19:18:15] (0s) Accumulating deltas
+[2025-09-13 19:18:15] (0s)  >>> Created relation Class::ClassExpr.getADecoratorCall/0#54df5696/2@a74da0oo with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Inferred that project#Class::ClassExpr.getADecoratorCall/0#54df5696/1@a676207g is empty, due to Class::ClassExpr.getADecoratorCall/0#54df5696/2@a74da0oo.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate m#AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb/1@401b0cbv
+[2025-09-13 19:18:15] (0s)  >>> Created relation m#AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb/1@401b0cbv with 12 rows and digest 665f78selu0m2bm46g4ue3vg3g9.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_exprs_032#join_rhs/3@dc21c4iv
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_exprs_032#join_rhs/3@dc21c4iv with 45 rows and digest c8d56akdpe4mml0cngl50mk5ph1.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb/2@07bf1fqf
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb/2@07bf1fqf with 4 rows and digest f95e6e6rer4rkf698qsa9vjt6kc.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb_10#join_rhs/2@507d7798
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Assign_.getValue/0#dispred#53d00b56#fb_10#join_rhs/2@507d7798 with 4 rows and digest 59a9e6120c52uhet2grj7v1rond.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate py_stmts_10#join_rhs/2@97ec97cm
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_stmts_10#join_rhs/2@97ec97cm with 17 rows and digest 130b8bqm89k7q5pl8ltp4ivbrvc.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Assign_.getTarget/1#dispred#6ad44d47/3@b7f147lv
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Assign_.getTarget/1#dispred#6ad44d47/3@b7f147lv with 5 rows and digest c84c4bih8ojsopegn7ru743irjb.
+[2025-09-13 19:18:15] (0s)  >>> Created relation variable/3@5e1d40kq with 14 rows and digest 98ee06m96f9iadpcf0vvpa1t337.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_variables/2@62cd450b with 21 rows and digest abf8e7r9odbjs391ln5k7b05i0a.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Exprs::Name.getId/0#dispred#4fa5460e/2@1c667ebq
+[2025-09-13 19:18:15] (0s)  >>> Created relation Exprs::Name.getId/0#dispred#4fa5460e/2@1c667ebq with 21 rows and digest d105c2b4b2358g5p6gk8mf69u20.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate #select/2@b1144013
+[2025-09-13 19:18:15] (0s)  >>> Created relation #select/2@b1144013 with 1 rows and digest df6a36ujfif3soivngurnu12pad.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Function::FunctionDef#ffa22159/2@fc4e36sm
+[2025-09-13 19:18:15] (0s)  >>> Created relation Function::FunctionDef#ffa22159/2@fc4e36sm with 3 rows and digest ffae595pfptf1lkn45ii1sqr7k4.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate project#Function::FunctionDef#ffa22159/1@0c0f5b8n
+[2025-09-13 19:18:15] (0s)  >>> Created relation project#Function::FunctionDef#ffa22159/1@0c0f5b8n with 3 rows and digest 1bb48fvskjmb7hg9kksrtodd501.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Class::ClassDef#83097204/1@4d2446ee
+[2025-09-13 19:18:15] (0s)  >>> Created relation Class::ClassDef#83097204/1@4d2446ee with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Stmts::AssignStmt#45f46a75/1@8cc50es5
+[2025-09-13 19:18:15] (0s)  >>> Created relation Stmts::AssignStmt#45f46a75/1@8cc50es5 with 2 rows and digest bb170eqgsf94505t77ra1d2bjd8.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Assign__not_Stmts::AssignStmt_Class::ClassDef_Function::FunctionDef#9571075b/1@670cb7di
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Assign__not_Stmts::AssignStmt_Class::ClassDef_Function::FunctionDef#9571075b/1@670cb7di with 0 rows and digest THIS-RELATION-HAS-NO-TUPLES.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Assign_.toString/0#dispred#782906e5/2@926fbbjs
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Assign_.toString/0#dispred#782906e5/2@926fbbjs with 5 rows and digest 7e972aav9ufvn4p4rgvc504gsp6.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate project#AstGenerated::Assign_.toString/0#dispred#782906e5/1@98168d1j
+[2025-09-13 19:18:15] (0s)  >>> Created relation project#AstGenerated::Assign_.toString/0#dispred#782906e5/1@98168d1j with 5 rows and digest 5099810mtefb6ndmcp9634tojka.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate project##select/1@3cb2f3m6
+[2025-09-13 19:18:15] (0s)  >>> Created relation project##select/1@3cb2f3m6 with 1 rows and digest d1a62a7mf1kfgkn56ih43j1q2lc.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::AstNode_.toString/0#dispred#192f27b5#bf/2@b1f47eeg
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::AstNode_.toString/0#dispred#192f27b5#bf/2@b1f47eeg with 1 rows and digest ba5a726iqa8gaa119vsksr6ttb4.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate project#AstGenerated::AstNode_.toString/0#dispred#192f27b5#bf/1@72da6f3h
+[2025-09-13 19:18:15] (0s)  >>> Created relation project#AstGenerated::AstNode_.toString/0#dispred#192f27b5#bf/1@72da6f3h with 1 rows and digest d1a62a7mf1kfgkn56ih43j1q2lc.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _#select_project#AstGenerated::Assign_.toString/0#dispred#782906e5_project#AstGenerated::AstNode_.to__#antijoin_rhs/2@f8e8e6mq
+[2025-09-13 19:18:15] (0s)  >>> Created relation _#select_project#AstGenerated::Assign_.toString/0#dispred#782906e5_project#AstGenerated::AstNode_.to__#antijoin_rhs/2@f8e8e6mq with 1 rows and digest df6a36ujfif3soivngurnu12pad.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _#select_AstGenerated::Assign_.toString/0#dispred#782906e5_AstGenerated::AstNode_.toString/0#dispred__#shared/3@2bc6c3m5
+[2025-09-13 19:18:15] (0s)  >>> Created relation _#select_AstGenerated::Assign_.toString/0#dispred#782906e5_AstGenerated::AstNode_.toString/0#dispred__#shared/3@2bc6c3m5 with 1 rows and digest d64a55ik9o2d79ffu7bfdkt54ke.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_locations/2@d222f4l2 with 63 rows and digest 8384c3uvkukm8dflqas8ermrqaa.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate AstGenerated::Stmt_.getLocation/0#dispred#de1f1018#bf/2@b1d37e81
+[2025-09-13 19:18:15] (0s)  >>> Created relation AstGenerated::Stmt_.getLocation/0#dispred#de1f1018#bf/2@b1d37e81 with 1 rows and digest 04f4123fv6m8c9ggu38r6heni6b.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _AstExtended::AstNode.getLocation/0#dispred#6b4dcb62__#select_AstGenerated::Assign_.toString/0#dispr__#shared/4@1cff74dp
+[2025-09-13 19:18:15] (0s)  >>> Created relation _AstExtended::AstNode.getLocation/0#dispred#6b4dcb62__#select_AstGenerated::Assign_.toString/0#dispr__#shared/4@1cff74dp with 1 rows and digest 8e9aedcb538uo5ef74kn1fsoc53.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate _AstGenerated::Stmt_.getLocation/0#dispred#de1f1018#bf__#select_AstGenerated::Assign_.toString/0#dis__#shared/4@31c113ci
+[2025-09-13 19:18:15] (0s)  >>> Created relation _AstGenerated::Stmt_.getLocation/0#dispred#de1f1018#bf__#select_AstGenerated::Assign_.toString/0#dis__#shared/4@31c113ci with 1 rows and digest 8e9aedcb538uo5ef74kn1fsoc53.
+[2025-09-13 19:18:15] (0s)  >>> Created relation folders/2@bad7d9u0 with 8 rows and digest 263251k12c41euidspnu178is7d.
+[2025-09-13 19:18:15] (0s)  >>> Created relation files/2@ec93749g with 3 rows and digest 3ff82bcb8qmf4a62idag5dees20.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Files::Input::ContainerBase.getAbsolutePath/0#dispred#bb5aca3b/2@966d67vo
+[2025-09-13 19:18:15] (0s)  >>> Created relation Files::Input::ContainerBase.getAbsolutePath/0#dispred#bb5aca3b/2@966d67vo with 11 rows and digest 62f8ffcvpe46elggblorft0bue6.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate m#Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/1@252be4i0
+[2025-09-13 19:18:15] (0s)  >>> Created relation m#Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/1@252be4i0 with 1 rows and digest ea78b26cf5c8leupo634dibk48e.
+[2025-09-13 19:18:15] (0s)  >>> Created relation locations_ast/6@aba204da with 70 rows and digest b1ccb6badm6hv1a4ujjs1ku5bbc.
+[2025-09-13 19:18:15] (0s)  >>> Created relation py_module_path/2@7a0f7599 with 1 rows and digest 41e085uiopi9tjqsa7l3tg0alve.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Module::Module.getFile/0#dispred#53eb9b1b/2@648ff7sb
+[2025-09-13 19:18:15] (0s)  >>> Created relation Module::Module.getFile/0#dispred#53eb9b1b/2@648ff7sb with 1 rows and digest 41e085uiopi9tjqsa7l3tg0alve.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Module::Module.getFile/0#dispred#53eb9b1b_0#antijoin_rhs/1@b54f01qv
+[2025-09-13 19:18:15] (0s)  >>> Created relation Module::Module.getFile/0#dispred#53eb9b1b_0#antijoin_rhs/1@b54f01qv with 1 rows and digest ba419326qs1cggnc945ppe9f7h7.
+[2025-09-13 19:18:15] (0s)  >>> Created relation locations_default/6@2b5cc3pr with 83 rows and digest 91db5bghn62jthjvoc4hocepkab.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate locations_ast_102345#join_rhs/6@ba5e2d5g
+[2025-09-13 19:18:15] (0s)  >>> Created relation locations_ast_102345#join_rhs/6@ba5e2d5g with 70 rows and digest 640a48vlhrfpncri71eoqesldq5.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/6@55ffec5g
+[2025-09-13 19:18:15] (0s)  >>> Created relation Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/6@55ffec5g with 1 rows and digest 319d6dk3q5ch9lmr7ng6k7f56f3.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate project#Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/1@4b0a5d1k
+[2025-09-13 19:18:15] (0s)  >>> Created relation project#Files::Location.hasLocationInfo/5#dispred#143bb906#bfffff/1@4b0a5d1k with 1 rows and digest ea78b26cf5c8leupo634dibk48e.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate __AstExtended::AstNode.getLocation/0#dispred#6b4dcb62__#select_AstGenerated::Assign_.toString/0#disp__#antijoin_rhs/3@e74d5e37
+[2025-09-13 19:18:15] (0s)  >>> Created relation __AstExtended::AstNode.getLocation/0#dispred#6b4dcb62__#select_AstGenerated::Assign_.toString/0#disp__#antijoin_rhs/3@e74d5e37 with 1 rows and digest d64a55ik9o2d79ffu7bfdkt54ke.
+[2025-09-13 19:18:15] (0s) Starting to evaluate predicate #select#query/8@0a5d37ac
+[2025-09-13 19:18:15] (0s)  >>> Created relation #select#query/8@0a5d37ac with 1 rows and digest f52c6bqekb1bugeco2kptq3qo7f.
+[2025-09-13 19:18:15] (0s) Query done
+[2025-09-13 19:18:15] (0s) Sequence stamp origin is -6004261736784921640
+[2025-09-13 19:18:15] (0s) Pausing evaluation to sync to disk at sequence stamp o+0
+[2025-09-13 19:18:15] (0s) Unpausing evaluation
+[2025-09-13 19:18:15] Evaluation of C:\Users\elfah\Desktop\projects\codeql-test\queries\hardcoded-password.ql produced BQRS results.
+[2025-09-13 19:18:15] [PROGRESS] execute queries> [1/1 eval 412ms] Evaluation done; writing results to test-security-queries\hardcoded-password.bqrs.
+[2025-09-13 19:18:15] [PROGRESS] execute queries> Shutting down query evaluator.
+[2025-09-13 19:18:15] Pausing evaluation to close the cache at sequence stamp o+1
+[2025-09-13 19:18:15] The disk cache is freshly trimmed; leave it be.
+[2025-09-13 19:18:15] Unpausing evaluation
+[2025-09-13 19:18:15] This NaiveBuddyAllocator requested 0 eviction rounds.
+[2025-09-13 19:18:15] Exiting with code 0

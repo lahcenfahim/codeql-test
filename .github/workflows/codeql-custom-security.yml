@@ -1,0 +1,43 @@
+name: "CodeQL Custom Security"
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: python
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+
+    - name: Run Custom Queries
+      run: |
+        # Installer les dépendances des requêtes
+        find . -name "qlpack.yml" -exec dirname {} \; | xargs -I {} codeql pack install {}
+        
+        # Exécuter toutes les requêtes .ql
+        mkdir -p results
+        find . -name "*.ql" -type f | while read query; do
+          name=$(basename "$query" .ql)
+          codeql database analyze ${{ runner.temp }}/codeql_databases/python "$query" \
+            --format=sarif-latest --output="results/${name}.sarif" || true
+        done
+
+    - name: Upload Results
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results/

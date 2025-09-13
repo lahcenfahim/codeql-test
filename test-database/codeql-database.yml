@@ -1,0 +1,12 @@
+---
+sourceLocationPrefix: C:\Users\elfah\Desktop\projects\codeql-test
+baselineLinesOfCode: 14
+unicodeNewlines: false
+columnKind: utf32
+primaryLanguage: python
+creationMetadata:
+  cliVersion: 2.23.0
+  creationTime: 2025-09-13T17:00:11.704890700Z
+overlayDatabase: false
+overlayBaseDatabase: false
+finalised: true

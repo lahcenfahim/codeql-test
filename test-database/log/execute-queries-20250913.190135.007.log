@@ -1,0 +1,60 @@
+[2025-09-13 19:01:35] This is codeql execute queries -J-Xmx1800M --off-heap-ram=1530 --verbosity=progress --logdir=C:\Users\elfah\Desktop\projects\codeql-test\test-database\log --evaluator-log-level=5 --warnings=show --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --dynamic-join-order-mode=none --no-rerun --output=C:\Users\elfah\Desktop\projects\codeql-test\test-database\results -- C:\Users\elfah\Desktop\projects\codeql-test\test-database\db-python queries/dangerous-pickle.ql
+[2025-09-13 19:01:35] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --format=json -- queries/dangerous-pickle.ql
+[2025-09-13 19:01:35] [PROGRESS] resolve queries> Recording pack reference test-security-queries at C:\Users\elfah\Desktop\projects\codeql-test\queries.
+[2025-09-13 19:01:35] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries\\dangerous-pickle.ql"
+                      ]
+[2025-09-13 19:01:35] Refusing fancy output: Cannot detect terminal size on this platform
+[2025-09-13 19:01:35] Creating executor with 1 threads.
+[2025-09-13 19:01:35] Calling plumbing command: codeql resolve extensions --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --include-extension-row-locations queries/dangerous-pickle.ql
+[2025-09-13 19:01:35] Calling plumbing command: codeql resolve queries --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --allow-library-packs --format startingpacks -- queries/dangerous-pickle.ql
+[2025-09-13 19:01:35] [PROGRESS] resolve queries> Recording pack reference test-security-queries at C:\Users\elfah\Desktop\projects\codeql-test\queries.
+[2025-09-13 19:01:35] Plumbing command codeql resolve queries completed:
+                      [
+                        "C:\\Users\\elfah\\Desktop\\projects\\codeql-test\\queries"
+                      ]
+[2025-09-13 19:01:35] Calling plumbing command: codeql resolve extensions-by-pack --qlconfig-file=C:\Users\elfah\Desktop\projects\codeql-test\qlconfig.yml --include-extension-row-locations -- C:\Users\elfah\Desktop\projects\codeql-test\queries
+[2025-09-13 19:01:35] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}
+[2025-09-13 19:01:35] [SPAMMY] resolve extensions-by-pack> [DERIVATION] test-security-queries: 1.0.0 {test-security-queries: not 1.0.0 {root: test-security-queries@1.0.0}}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] test-security-queries: * [*], codeql/python-all: not * {dependency: test-security-queries@* [*] requires codeql/python-all@*}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [DECISION 1] test-security-queries: 1.0.0
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [DERIVATION] codeql/python-all: * {test-security-queries: * [*], codeql/python-all: not * {dependency: test-security-queries@* [*] requires codeql/python-all@*}}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] codeql/python-all: * [*] {pack not found: codeql/python-all}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [CONFLICT] codeql/python-all: * [*] {pack not found: codeql/python-all}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack>   [CONSTRAINT] test-security-queries: 1.0.0
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack>   [CONSTRAINT] codeql/python-all: *
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack>   [SATISFIER] derivation: codeql/python-all: *
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack>   [ALMOST_SATISFIER] <none>
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [INCOMPATIBILITY] test-security-queries: * [*] {conflict}
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack> [FAILURE]
+[2025-09-13 19:02:45] [SPAMMY] resolve extensions-by-pack>   Because 'test-security-queries' depends on 'codeql/python-all@*', but pack 'codeql/python-all' was not found, version solving failed.
+[2025-09-13 19:02:45] [ERROR] resolve extensions-by-pack> ERROR: Referenced pack 'codeql/python-all' was not found locally, and no lock file is present for 'test-security-queries'. Run 'codeql pack install' to create the lock file and download the dependencies. (C:\Users\elfah\Desktop\projects\codeql-test\queries\qlpack.yml:1,1-1)
+[2025-09-13 19:02:45] [ERROR] resolve extensions-by-pack> ERROR: No valid pack solution found:
+                              Because 'test-security-queries' depends on 'codeql/python-all@*', but pack 'codeql/python-all' was not found, version solving failed.
+                               (C:\Users\elfah\Desktop\projects\codeql-test\queries\qlpack.yml:1,1-1)
+[2025-09-13 19:02:45] Sequence stamp origin is -6004265944596819478
+[2025-09-13 19:02:45] Pausing evaluation to close the cache at sequence stamp o+0
+[2025-09-13 19:02:45] The disk cache is freshly trimmed; leave it be.
+[2025-09-13 19:02:46] Unpausing evaluation
+[2025-09-13 19:02:46] This NaiveBuddyAllocator requested 0 eviction rounds.
+[2025-09-13 19:02:46] Exception caught at top level: A 'codeql resolve extensions-by-pack' operation failed with error code 2
+                      com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:75)
+                      com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:170)
+                      com.semmle.cli2.resolve.ResolveExtensionsCommand.executeJSON(ResolveExtensionsCommand.java:59)
+                      com.semmle.cli2.resolve.ResolveExtensionsCommand.executeJSON(ResolveExtensionsCommand.java:18)
+                      com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSONWithExistingMessages(SimpleJsonSubcommand.java:121)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSON(SimpleJsonSubcommand.java:110)
+                      com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:61)
+                      com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:170)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.resolveExtensions(ExecuteQueriesCommand.java:856)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.executeSubcommand(ExecuteQueriesCommand.java:471)
+                      com.semmle.cli2.picocli.SubcommandCommon.lambda$executeSubcommandWithMessages$5(SubcommandCommon.java:892)
+                      com.semmle.cli2.picocli.SubcommandCommon.withCompilationMessages(SubcommandCommon.java:444)
+                      com.semmle.cli2.picocli.SubcommandCommon.executeSubcommandWithMessages(SubcommandCommon.java:890)
+                      com.semmle.cli2.picocli.SubcommandCommon.toplevelMain(SubcommandCommon.java:777)
+                      com.semmle.cli2.picocli.SubcommandCommon.call(SubcommandCommon.java:757)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:238)
+                      com.semmle.cli2.picocli.SubcommandMaker.runMain(SubcommandMaker.java:259)
+                      com.semmle.cli2.CodeQL.main(CodeQL.java:113)

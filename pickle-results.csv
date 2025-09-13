@@ -1,0 +1,1 @@
+"Dangerous pickle usage","Détecte pickle.loads() qui permet l'exécution de code","error","CRITICAL: Utilisation dangereuse de pickle.loads() détectée!","/app.py","11","12","11","29"
