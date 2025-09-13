@@ -1,26 +1,19 @@
 /**
- * @name Command Injection (Python)
- * @description Detects possible command injection vulnerabilities in Python
- * @kind problem
- * @id py/command-injection
+ * @name Command injection
+ * @description Executing user-controlled commands can lead to command injection vulnerabilities
+ * @kind path-problem
+ * @problem.severity error
+ * @security-severity 9.8
+ * @precision high
+ * @id py/command-injection-custom
  * @tags security
+ *       external/cwe/cwe-078
  */
 
 import python
-import semmle.python.security.TaintTracking
+import semmle.python.security.dataflow.CommandInjectionQuery
+import DataFlow::PathGraph
 
-class UserInput extends TaintTracking::Source {
-  UserInput() { this.isParameter() or this.isInput() }
-}
-
-class CommandSink extends TaintTracking::Sink {
-  CommandSink() { exists(Call c |
-    c.getCallee().getName() in ["system", "popen", "run", "call"] and
-    this = c.getArgument(0)
-  ) }
-}
-
-// Si une donnée utilisateur atteint un sink, c’est une alerte
-from UserInput src, CommandSink sink
-where TaintTracking::localFlow(src, sink)
-select sink, "Potential command injection: user input reaches system command"
+from CommandInjectionFlow::PathNode source, CommandInjectionFlow::PathNode sink
+where CommandInjectionFlow::flowPath(source, sink)
+select sink.getNode(), source, sink, "This command depends on a $@.", source.getNode(), "user-provided value"
