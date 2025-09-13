@@ -1,11 +1,10 @@
-# .github/workflows/codeql-custom.yml
-name: "CodeQL Custom Security"
+name: CodeQL Custom
 
 on:
   push:
-    branches: [ main, master ]
+    branches: main
   pull_request:
-    branches: [ main, master ]
+    branches: main
 
 jobs:
   security-scan:
